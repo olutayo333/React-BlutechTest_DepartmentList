@@ -1,8 +1,9 @@
-# React + Vite
+# React-Bluetech_Test
+A simple application that fetches data from an API and display them in a table with the functionality that enables users to search by name and also download the data in a PDF format   
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technology used include
 
-Currently, two official plugins are available:
+React JS,  JSpdf,  bootstrap, axios, vercel amongst others.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The USer Interface is friendly and well responsive on web and mobile devices.
+The application will be deployed to provide live url for users   
