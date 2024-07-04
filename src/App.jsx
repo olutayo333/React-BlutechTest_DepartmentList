@@ -10,8 +10,6 @@ import { jsPDF } from 'jspdf';
 import { IoIosCloudDownload } from "react-icons/io";
 import autoTable from 'jspdf-autotable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
-//import autoTable from 'jspdf-autotable';
 //import loadingGif from "../assets/loadinggif1.gif";
 
 function App() {
@@ -27,7 +25,6 @@ const [filterResult, setfilterResult]= useState([])
 useEffect(()=>{
   axios.get(URL2, {headers: {"Content-Type": "application/json", "Accept": "application/json" }})
   .then((response)=>{
-    //console.log(response.data); .charAt(0).toUpplerCase()
     setarray([...response.data]);
     console.log(array);
     setstatus(true)
@@ -50,14 +47,12 @@ const pdfdata = array.map((each, index)=>([index+1 , each.SKU, each.Designer, ea
       }  
     const filter = ()=>{
       let result = array.filter(u=>(u.Designer.toLowerCase().match(search.toLowerCase())))
-      setfilterResult([...result]) //setsearchbydepartment([...result]);
-      //console.log(result); 
+      setfilterResult([...result]) 
       console.log(result.length);
       setstatus(false)
-      //console.log(status);
       if (result.length == array.length){
         setstatus(true)
-        //console.log(status);
+
       }
     }
 
@@ -99,7 +94,6 @@ const pdfdata = array.map((each, index)=>([index+1 , each.SKU, each.Designer, ea
                 <>
                     <table className=' table table-sm rounded  table-hover' style={{backgroundColor:"#FFFFFF", marginRight:"10px", borderRadius:"30px", padding:"1vh, 1vw, 1vh, 1vw"}} >
                     <tbody style={{padding:"1vh, 1vw, 1vh, 1vw"}}>
-                      {/* track student.id */}
                       <tr  style={{textAlign:'left', backgroundColor:'#F0F4FE', position:"sticky", top:"0" }} className='pt-5 mb-5'>
                         <th className='pt-3'><input type="checkbox" /></th>
                         <th className='pt-3' style={{paddingRight:"2vw", backgroundColor:'#F0F4FE'}} > S/N </th>
@@ -137,7 +131,6 @@ const pdfdata = array.map((each, index)=>([index+1 , each.SKU, each.Designer, ea
                 <>
                     <table className=' table table-sm rounded  table-hover' style={{backgroundColor:"#FFFFFF", marginRight:"10px", borderRadius:"30px", padding:"1vh, 1vw, 1vh, 1vw"}} >
                     <tbody style={{padding:"1vh, 1vw, 1vh, 1vw"}}>
-                      {/* track student.id */}
                       <tr  style={{textAlign:'left', backgroundColor:'#F0F4FE', }} className='pt-5 mb-5'>
                         <th className='pt-3'><input type="checkbox" /></th>
                         <th className='pt-3' style={{paddingRight:"2vw", backgroundColor:'#F0F4FE'}} > S/N </th>
@@ -176,6 +169,7 @@ const pdfdata = array.map((each, index)=>([index+1 , each.SKU, each.Designer, ea
           </div>
         </div>
       </div>
+      {/* track student.id */}
     </>
   )
 }
